@@ -1,26 +1,62 @@
 <!DOCTYPE html>
 <html>
-    <head>
 
-        <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <link rel="stylesheet" href="./assets/css/style.css">
-        <title>Crystal Game</title>
+<head>
 
-    </head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Crystal Game</title>
 
-    <body>
+</head>
+
+<body>
+
+    <h1> Crystal Game</h1>
+    <div class="container">
+        <div class="row">
+            <h2>Number to Guess</h2>
+            <p></p>
+            <h3 id="number-to-guess"></h3>
+            <br>
+            <h2>Score Tally</h2>
+            <div id="wins"></div>
+            <div id="losses"></div>
+
+        </div>
+
+        <div class="row">
+            <img class="crystals" src="./assets/images/amber.png">
+            <img class="crystals" src="./assets/images/ruby.png">
+            <img class="crystals" src="./assets/images/sapphire.png">
+            <img class="crystals" src="./assets/images/emerald.png">
+        </div>
+    
+        <div class = "row">
+            <h2>Tally</h2>
+            <div id = "tally"></div>
+        </div>
+    
+    </div>
+
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <script type="text/javascript">
-      
-       
+
+        var tally = 0
+        var wins = 0
+        var losses = 0
         
+
         //Display four crystals on the page    
 
         //Computer will generate a random number between 9 -120 and display on the page
+        var target = [Math.floor(Math.random() * (9+120)+1)];
+            alert (target);
+            $("#number-to-guess").text(target)
 
         //Four random numbers between 1 -12 will be randomly generated and assigned to 4 crystals on the page
 
@@ -31,9 +67,7 @@
         //If the score goes over the random number, add one to loss
 
         //Reload page when the score = random number or the score > random number
-
-        
     </script>
 
 
-    </body>
+</body>

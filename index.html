@@ -17,21 +17,32 @@
     <h1> Crystal Game</h1>
     <div class="container">
         <div class="row">
+            <div class = "col-md-4">
             <h2>Number to Guess</h2>
-            <p></p>
+            <p>  </p>
             <h3 id="number-to-guess"></h3>
+            </div>
             <br>
+            <div class = "col-md-4">
             <h2>Score Tally</h2>
+            <h3>Wins:</h3>
             <div id="wins"></div>
+            <h3>Losses:</h3>
             <div id="losses"></div>
+            </div>
+            <div class = "col-md-4">
+                <p></p>
+            </div>
+        
 
         </div>
 
         <div class="row">
             <img class="crystals" src="./assets/images/amber.png">
-            <img class="crystals" src="./assets/images/ruby.png">
-            <img class="crystals" src="./assets/images/sapphire.png">
-            <img class="crystals" src="./assets/images/emerald.png">
+            <p>amber</p><h3 id = "amber"></h3>
+            <img class="crystals" id = "ruby" src="./assets/images/ruby.png">
+            <img class="crystals" id = "sapphire" src="./assets/images/sapphire.png">
+            <img class="crystals" id = "emerald" src="./assets/images/emerald.png">
         </div>
     
         <div class = "row">
@@ -54,11 +65,26 @@
         //Display four crystals on the page    
 
         //Computer will generate a random number between 9 -120 and display on the page
-        var target = [Math.floor(Math.random() * (9+120)+1)];
+        var target = [Math.floor(Math.random() * (120-9)+1)];
             alert (target);
             $("#number-to-guess").text(target)
 
         //Four random numbers between 1 -12 will be randomly generated and assigned to 4 crystals on the page
+        var ambernumber = [Math.floor(Math.random() * (1+12)+1)];
+            alert (ambernumber);
+            $("#amber").text(ambernumber)
+
+        var rubynumber = [Math.floor(Math.random() * (1+12)+1)];
+            alert (rubynumber);
+            $("#ruby").text(rubynumber)
+
+        var sapphirenumber = [Math.floor(Math.random() * (1+12)+1)];
+            alert (sapphirenumber);
+            $("#sapphire").text(sapphirenumber)
+
+        var emeraldnumber = [Math.floor(Math.random() * (1+12)+1)];
+            alert (emeraldnumber);
+            $("#sapphire").text(emeraldnumber)
 
         //When the player clicks a crystal the number associated with it will be added to a score
 

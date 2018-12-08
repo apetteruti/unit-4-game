@@ -17,39 +17,38 @@
     <h1> Crystal Game</h1>
     <div class="container">
         <div class="row">
-            <div class = "col-md-4">
-            <h2>Number to Guess</h2>
-            <p>  </p>
-            <h3 id="number-to-guess"></h3>
+            <div class="col-md-4">
+                <h2>Number to Guess</h2>
+                <p> </p>
+                <h3 id="number-to-guess"></h3>
             </div>
             <br>
-            <div class = "col-md-4">
-            <h2>Score Tally</h2>
-            <h3>Wins:</h3>
-            <div id="wins"></div>
-            <h3>Losses:</h3>
-            <div id="losses"></div>
+            <div class="col-md-4">
+                <h2>Score Tally</h2>
+                <h3>Wins:</h3>
+                <div id="wins"></div>
+                <h3>Losses:</h3>
+                <div id="losses"></div>
             </div>
-            <div class = "col-md-4">
+            <div class="col-md-4">
                 <p></p>
             </div>
-        
+
 
         </div>
 
         <div class="row">
-            <img class="crystals" src="./assets/images/amber.png">
-            <p>amber</p><h3 id = "amber"></h3>
-            <img class="crystals" id = "ruby" src="./assets/images/ruby.png">
-            <img class="crystals" id = "sapphire" src="./assets/images/sapphire.png">
-            <img class="crystals" id = "emerald" src="./assets/images/emerald.png">
+            <img class="crystals" id="amber" src="./assets/images/amber.png">
+            <img class="crystals" id="ruby" src="./assets/images/ruby.png">
+            <img class="crystals" id="sapphire" src="./assets/images/sapphire.png">
+            <img class="crystals" id="emerald" src="./assets/images/emerald.png">
         </div>
-    
-        <div class = "row">
+
+        <div class="row">
             <h2>Tally</h2>
-            <div id = "tally"></div>
+            <div id="showTally"></div>
         </div>
-    
+
     </div>
 
 
@@ -57,42 +56,72 @@
 
     <script type="text/javascript">
 
-        var tally = 0
-        var wins = 0
-        var losses = 0
-        
+        $(document).ready(function () {
 
-        //Display four crystals on the page    
+            //VARIABLES//
 
-        //Computer will generate a random number between 9 -120 and display on the page
-        var target = [Math.floor(Math.random() * (120-9)+1)];
-            alert (target);
+            var userTally = 0 //Sum of the numbers users guess
+            var wins = 0 //Total user wins
+            var losses = 0 //Total user losses  
+
+            //Computer will generate a random number between 9 -120 and display on the page
+            var target = Math.floor((Math.random() * 120) + 9);
+            alert(target);
             $("#number-to-guess").text(target)
 
-        //Four random numbers between 1 -12 will be randomly generated and assigned to 4 crystals on the page
-        var ambernumber = [Math.floor(Math.random() * (1+12)+1)];
-            alert (ambernumber);
-            $("#amber").text(ambernumber)
+            //Four random numbers between 1 -12 will be randomly generated and assigned to 4 crystals on the page
 
-        var rubynumber = [Math.floor(Math.random() * (1+12)+1)];
-            alert (rubynumber);
-            $("#ruby").text(rubynumber)
+            //Amber number generator
+            var amberNumber = Math.floor((Math.random() * 12) + 1);
+            alert(amberNumber);
+            $("#amber").text(amberNumber)
 
-        var sapphirenumber = [Math.floor(Math.random() * (1+12)+1)];
-            alert (sapphirenumber);
-            $("#sapphire").text(sapphirenumber)
+            //Ruby number generator
+            var rubyNumber = Math.floor((Math.random() * 12) + 1);
+            alert(rubyNumber);
+            $("#ruby").text(rubyNumber)
 
-        var emeraldnumber = [Math.floor(Math.random() * (1+12)+1)];
-            alert (emeraldnumber);
-            $("#sapphire").text(emeraldnumber)
+            //Sapphire number generator
+            var sapphireNumber = Math.floor((Math.random() * 12) + 1);
+            alert(sapphireNumber);
+            $("#sapphire").text(sapphireNumber)
 
-        //When the player clicks a crystal the number associated with it will be added to a score
+            //Emerald number generator
+            var emeraldNumber = Math.floor((Math.random() * 12) + 1);
+            $("#sapphire").text(emeraldNumber)
 
-        //When the score equals the random number, add one to win
+           
+           //FUNCTIONS//
+            //When the player clicks a crystal the number associated with it will be added to a score
+            //Each click will add the number to the userTally
 
-        //If the score goes over the random number, add one to loss
+            //Amber
+            $("#amber").on("click", function () {
+                userTally = userTally + amberNumber //adds the amber number to the userTally
+                // userTally.push (amberNumber)
+                console.log (userTally)
+                $("#showTally").text(userTally) //shows it in the Tally area
+            })
 
-        //Reload page when the score = random number or the score > random number
+            //Ruby
+            $("#ruby").on("click", function () {
+                userTally = userTally + rubyNumber //adds the amber number to the userTally
+                console.log (userTally)
+                $("#showTally").text(userTally) //shows it in the Tally area
+            })
+
+            //Sapphire
+
+
+            //Emerald
+
+            //When the score equals the random number, add one to win
+
+            //If the score goes over the random number, add one to loss
+
+            //Reload page when the score = random number or the score > random number (maybe need a while function?)
+
+        })
     </script>
 
 

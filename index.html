@@ -13,27 +13,34 @@
 </head>
 
 <body>
+    <div class = "container">
+        <div class = "row ">
+            <p>  </p>
+        </div>
+    </div>
 
-    <h1> Crystal Game</h1>
+    <h1 class = "h1 d-flex justify-content-center banner"> Crystal Game</h1>
     <div class="container">
         <div class="row">
-            <div class="col-md-4">
-                <h2>Number to Guess</h2>
+            <div class="col-md-4" id = "target">
+                <h2>Number to Guess:</h2>
                 <p> </p>
                 <h3 id="number-to-guess"></h3>
             </div>
             <br>
-            <div class="col-md-4">
+            <div class="col-md-4" id = "tally">
                 <h2>Score Tally</h2>
-                <h3>Wins:</h3>
-                <div id="wins"></div>
-                <h3>Losses:</h3>
-                <div id="losses"></div>
+                <h3>Wins:</h3> <span><div id="wins"></div></span>
+                <h3>Losses:</h3><span><div id="losses"></div></span>
+                
             </div>
             <div class="col-md-4">
                 <p></p>
             </div>
 
+        </div>
+        <div class = "row">
+            <p></p>
         </div>
 
         <div class="row">

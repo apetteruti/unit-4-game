@@ -1,0 +1,25 @@
+body{
+    background-image: url(../images/stripes-light.png);
+}
+
+.banner{
+    background-color: pink;
+    height: 200px;
+}
+
+.h1{
+    font-size: 100px;
+    color: darkslategrey;
+    font-family: sans-serif;
+    padding-top: 25px;
+}
+
+#target {
+    background-color: rgb(156, 196, 196);
+    border: 2px;
+    border-color: darkslategrey;
+}
+
+#tally {
+    background-color: rgb(219, 219, 191);
+}

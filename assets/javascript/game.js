@@ -8,24 +8,24 @@ $(document).ready(function () {
     //RANDOM NUMBER
     //Computer will generate a random number between 9 -120 and display on the page
     var target = Math.floor((Math.random() * 120) + 9);
-    alert(target);
+    // alert(target);
     $("#number-to-guess").text(target)
 
     //CRYSTAL NUMBERS
     //Four random numbers between 1 -12 will be randomly generated and assigned to 4 crystals on the page
     //Amber number generator
     var amberNumber = Math.floor((Math.random() * 12) + 1);
-    alert(amberNumber);
+    // alert(amberNumber);
     $("#amber").text(amberNumber)
 
     //Ruby number generator
     var rubyNumber = Math.floor((Math.random() * 12) + 1);
-    alert(rubyNumber);
+    // alert(rubyNumber);
     $("#ruby").text(rubyNumber)
 
     //Sapphire number generator
     var sapphireNumber = Math.floor((Math.random() * 12) + 1);
-    alert(sapphireNumber);
+    // alert(sapphireNumber);
     $("#sapphire").text(sapphireNumber)
 
     //Emerald number generator
@@ -37,7 +37,7 @@ $(document).ready(function () {
    
     function reset() { //resets the game
         userTally = 0
-        target = 0              
+        // target = 0              
         target = Math.floor((Math.random() * 120) + 9)
         amberNumber = Math.floor((Math.random() * 12) + 1)
         rubyNumber = Math.floor((Math.random() * 12) + 1)

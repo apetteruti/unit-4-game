@@ -34,7 +34,6 @@
                 <p></p>
             </div>
 
-
         </div>
 
         <div class="row">
@@ -87,18 +86,20 @@
 
             //Emerald number generator
             var emeraldNumber = Math.floor((Math.random() * 12) + 1);
-            $("#sapphire").text(emeraldNumber)
+            $("#emerald").text(emeraldNumber)
 
             //TOOLS/FUNCTIONS
             //Reload page when the score = random number or the score > random number (maybe need a while function?)
+           
             function reload() {
                 userTally = 0
                 wins = 0
                 losses = 0
-                amberNumber = ''
-                rubyNumber = ''
-                sapphireNumber = ''
-                emeraldNumber = ''
+                target = Math.floor((Math.random() * 120) + 9)
+                amberNumber = Math.floor((Math.random() * 12) + 1)
+                rubyNumber = Math.floor((Math.random() * 12) + 1)
+                sapphireNumber = Math.floor((Math.random() * 12) + 1)
+                emeraldNumber = Math.floor((Math.random() * 12) + 1)
             }
 
             //When the score equals the random number, add one to win
@@ -215,7 +216,7 @@
                 //     reload //restart game
                 // }
             })
-        })
+        })    
 
     </script>
 </body>

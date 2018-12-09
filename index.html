@@ -89,26 +89,7 @@
             var emeraldNumber = Math.floor((Math.random() * 12) + 1);
             $("#sapphire").text(emeraldNumber)
 
-            //DIRECTIONS
-            //When the score equals the random number, add one to win
-
-            // function winOrLose() {
-            //     if (userTally == target) { 
-            //         win++ //adds one to win
-            //         alert ("Score! You win!")
-            //         $("#wins").text(win)
-            //         reload //restart game
-            //     }
-
-            //     //If the score goes over the random number, add one to loss
-            //     else if (userTally > target) {
-            //         loss++
-            //         alert ("Bummer! You lose!")
-            //         $("#losses").text(loss)
-            //         reload //restart game
-            //     }
-            // }
-
+            //TOOLS/FUNCTIONS
             //Reload page when the score = random number or the score > random number (maybe need a while function?)
             function reload() {
                 userTally = 0
@@ -118,6 +99,24 @@
                 rubyNumber = ''
                 sapphireNumber = ''
                 emeraldNumber = ''
+            }
+
+            //When the score equals the random number, add one to win
+            function winOrLose() {
+                if (userTally == target) { 
+                    wins++ //adds one to win
+                    alert ("Score! You win!")
+                    $("#wins").text(wins)
+                    reload()//restart game
+                }
+
+                //If the score goes over the random number, add one to loss
+                else if (userTally > target) {
+                    losses++
+                    alert ("Bummer! You lose!")
+                    $("#losses").text(losses)
+                    reload() //restart game
+                }
             }
 
             //CLICKS//
@@ -130,22 +129,22 @@
                 // userTally.push (amberNumber)
                 console.log(userTally)
                 $("#showTally").text(userTally) //shows it in the Tally area
-                // winOrLose //win or lose function
-                //test to see if the score is equal to target - add one to win and reload
-                if (userTally == target) { 
-                    win++ //adds one to win
-                    alert ("Score! You win!")
-                    $("#wins").text(win)
-                    reload //restart game
-                }
+                winOrLose() //win or lose function
+                // test to see if the score is equal to target - add one to win and reload
+                // if (userTally == target) { 
+                //     wins++ //adds one to win
+                //     alert ("Score! You win!")
+                //     $("#wins").text(wins)
+                //     reload //restart game
+                // }
 
-                //If the score goes over the random number, add one to loss and reload
-                else if (userTally > target) {
-                    loss++
-                    alert ("Bummer! You lose!")
-                    $("#losses").text(loss)
-                    reload //restart game
-                }
+                // //If the score goes over the random number, add one to loss and reload
+                // else if (userTally > target) {
+                //     losses++
+                //     alert ("Bummer! You lose!")
+                //     $("#losses").text(losses)
+                //     reload //restart game
+                // }
             })
 
             //Ruby
@@ -153,22 +152,22 @@
                 userTally = userTally + rubyNumber //adds the amber number to the userTally
                 console.log(userTally)
                 $("#showTally").text(userTally) //shows it in the Tally area
-                winOrLose //win or lose function
+                winOrLose() //win or lose function
                 //test to see if the score is equal to target - add one to win and reload
-                if (userTally == target) { 
-                    win++ //adds one to win
-                    alert ("Score! You win!")
-                    $("#wins").text(win)
-                    reload //restart game
-                }
+                // if (userTally == target) { 
+                //     wins++ //adds one to win
+                //     alert ("Score! You win!")
+                //     $("#wins").text(wins)
+                //     reload //restart game
+                // }
 
-                //If the score goes over the random number, add one to loss and reload
-                else if (userTally > target) {
-                    loss++
-                    alert ("Bummer! You lose!")
-                    $("#losses").text(loss)
-                    reload //restart game
-                }
+                // //If the score goes over the random number, add one to loss and reload
+                // else if (userTally > target) {
+                //     losses++
+                //     alert ("Bummer! You lose!")
+                //     $("#losses").text(losses)
+                //     reload //restart game
+                // }
             })
 
             //Sapphire
@@ -176,22 +175,22 @@
                 userTally = userTally + sapphireNumber //adds the amber number to the userTally
                 console.log(userTally)
                 $("#showTally").text(userTally) //shows it in the Tally area
-                winOrLose //win or lose function
+                winOrLose() //win or lose function
                 //test to see if the score is equal to target - add one to win and reload
-                if (userTally == target) { 
-                    win++ //adds one to win
-                    alert ("Score! You win!")
-                    $("#wins").text(win)
-                    reload //restart game
-                }
+                // if (userTally == target) { 
+                //     wins++ //adds one to win
+                //     alert ("Score! You win!")
+                //     $("#wins").text(wins)
+                //     reload //restart game
+                // }
 
-                //If the score goes over the random number, add one to loss and reload
-                else if (userTally > target) {
-                    loss++
-                    alert ("Bummer! You lose!")
-                    $("#losses").text(loss)
-                    reload //restart game
-                }
+                // //If the score goes over the random number, add one to loss and reload
+                // else if (userTally > target) {
+                //     losses++
+                //     alert ("Bummer! You lose!")
+                //     $("#losses").text(losses)
+                //     reload //restart game
+                // }
             })
 
             //Emerald
@@ -199,22 +198,22 @@
                 userTally = userTally + emeraldNumber //adds the amber number to the userTally
                 console.log(userTally)
                 $("#showTally").text(userTally) //shows it in the Tally area
-                winOrLose //win or lose function
+                winOrLose() //win or lose function
                 //test to see if the score is equal to target - add one to win and reload
-                if (userTally == target) { 
-                    win++ //adds one to win
-                    alert ("Score! You win!")
-                    $("#wins").text(win)
-                    reload //restart game
-                }
+                // if (userTally == target) { 
+                //     wins++ //adds one to win
+                //     alert ("Score! You win!")
+                //     $("#wins").text(wins)
+                //     reload //restart game
+                // }
 
-                //If the score goes over the random number, add one to loss and reload
-                else if (userTally > target) {
-                    loss++
-                    alert ("Bummer! You lose!")
-                    $("#losses").text(loss)
-                    reload //restart game
-                }
+                // //If the score goes over the random number, add one to loss and reload
+                // else if (userTally > target) {
+                //     losses++
+                //     alert ("Bummer! You lose!")
+                //     $("#losses").text(losses)
+                //     reload //restart game
+                // }
             })
         })
 

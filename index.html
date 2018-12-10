@@ -8,39 +8,47 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Crystal Game</title>
+    <title>All the Crystals Game!</title>
 
 </head>
 
 <body>
-    <div class = "container">
-        <div class = "row ">
-            <p>  </p>
+    <div class="container">
+        <div class="row ">
+            <p> </p>
         </div>
     </div>
 
-    <h1 class = "h1 d-flex justify-content-center banner"> Crystal Game</h1>
+    <h1 class="h1 d-flex justify-content-center banner"> All the Crystals Game</h1>
     <div class="container">
+        <div class="row" id="directions">
+            <p>A random number is generated at the start of the game. </p>
+            <p>Each of the four "crystals" below represents a random number and clicking on them you will add a specific amount of points to
+                your to the total score.</p>
+            <p>Win game by matching your total score to the random number. Lose the game if your total
+                score goes above the random number.</p>
+            <p>The value of each crystal is hidden until you click on it.</p>
+            <p>Each time the game starts, the game will change the values of each crystal.</p>
+        </div>
         <div class="row">
-            <div class="col-md-4" id = "target">
+            <div class="col-md-4" id="target">
                 <h2>Number to Guess:</h2>
                 <p> </p>
                 <h3 id="number-to-guess"></h3>
             </div>
             <br>
-            <div class="col-md-4" id = "tally">
+            <div class="col-md-4" id="tally">
                 <h2>Score</h2>
-                <h3>Wins:</h3> <span><div id="wins"></div></span>
-                <h3>Losses:</h3><span><div id="losses"></div></span>
-                
+                <h3>Wins:</h3><span id="wins"></span>
+                <h3>Losses:</h3><span id="losses"></span>
+
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4" id = "score">
+                <h2>Your total score:</h2>
                 <p></p>
+                <h3 id="showTally"></h3>
             </div>
 
-        </div>
-        <div class = "row">
-            <p></p>
         </div>
 
         <div class="row">
@@ -50,9 +58,6 @@
             <img class="crystals" id="emerald" src="./assets/images/emerald.png">
         </div>
 
-        <div class="row">
-            <h2>Tally:  </h2><span id="showTally"></span>
-        </div>
 
     </div>
 

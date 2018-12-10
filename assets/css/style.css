@@ -4,7 +4,7 @@ body{
 
 .banner{
     background-color: pink;
-    height: 200px;
+    height: 175px;
 }
 
 .h1{
@@ -14,16 +14,30 @@ body{
     padding-top: 25px;
 }
 
+#directions {
+    text-align: justify;
+    font-size: 12px;
+}
+
 #target {
-    background-color: rgb(156, 196, 196);
-    border: 2px;
-    border-color: darkslategrey;
+    border-style: solid;
+    border-width: 2px;
+    border-color: gray;
 }
 
 #tally {
-    background-color: rgb(219, 219, 191);
+    border-style: solid;
+    border-width: 2px;
+    border-color: gray;
 }
 
 #showTally{
-    font-size: 27px;
+    font-size: 35px;
+    color: teal
+}
+
+#score{
+    border-style: solid;
+    border-width: 2px;
+    border-color: gray;
 }

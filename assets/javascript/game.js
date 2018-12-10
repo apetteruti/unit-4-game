@@ -3,7 +3,7 @@ $(document).ready(function () {
     //VARIABLES//
     var userTally = 0 //Sum of the numbers users guess
     var wins = 0 //Total user wins
-    var losses = 0 //Total user losses  
+    var losses = 0 //Total user losses
 
     //RANDOM NUMBER
     //Computer will generate a random number between 9 -120 and display on the page
@@ -36,15 +36,23 @@ $(document).ready(function () {
     //Reload page when the score = random number or the score > random number (maybe need a while function?)
    
     function reset() { //resets the game
-        userTally = 0
-        // target = 0              
-        target = Math.floor((Math.random() * 120) + 9)
-        amberNumber = Math.floor((Math.random() * 12) + 1)
-        rubyNumber = Math.floor((Math.random() * 12) + 1)
-        sapphireNumber = Math.floor((Math.random() * 12) + 1)
-        emeraldNumber = Math.floor((Math.random() * 12) + 1)
+        $("body").on("click", function(){
+            userTally = ''
+            $(".showTally").text(userTally)
+            // target += null
+            })  
+        }
+        
+        function newNumbers (){
+            target = Math.floor((Math.random() * 120) + 9)
+            console.log(target)
+            $(".number-to-guess").text(target)
+            amberNumber = Math.floor((Math.random() * 12) + 1)
+            rubyNumber = Math.floor((Math.random() * 12) + 1)
+            sapphireNumber = Math.floor((Math.random() * 12) + 1)
+            emeraldNumber = Math.floor((Math.random() * 12) + 1)
     }
-
+    
     //When the score equals the random number, add one to win
     function winOrLose() {
         if (userTally == target) { 
@@ -52,6 +60,7 @@ $(document).ready(function () {
             alert ("Score! You win!")
             $("#wins").text(wins)
             reset()//restart game
+            newNumbers() //generates all new random numbers for crystals and target
         }
 
         //If the score goes over the random number, add one to loss
@@ -60,6 +69,7 @@ $(document).ready(function () {
             alert ("Bummer! You lose!")
             $("#losses").text(losses)
             reset() //restart game
+            newNumbers() //generates all new random numbers for crystals and target
         }
     }
 

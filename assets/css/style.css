@@ -41,3 +41,10 @@ body{
     border-width: 2px;
     border-color: gray;
 }
+
+.crystals{
+    object-fit: contain;
+    width: 200px;
+    height: 200px;
+    
+}

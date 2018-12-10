@@ -34,42 +34,50 @@ $(document).ready(function () {
 
     //TOOLS/FUNCTIONS
     //Reload page when the score = random number or the score > random number (maybe need a while function?)
-   
+
     function reset() { //resets the game
-        $("body").on("click", function(){
-            userTally = ''
-            $(".showTally").text(userTally)
-            // target += null
-            })  
-        }
-        
-        function newNumbers (){
-            target = Math.floor((Math.random() * 120) + 9)
-            console.log(target)
-            $(".number-to-guess").text(target)
-            amberNumber = Math.floor((Math.random() * 12) + 1)
-            rubyNumber = Math.floor((Math.random() * 12) + 1)
-            sapphireNumber = Math.floor((Math.random() * 12) + 1)
-            emeraldNumber = Math.floor((Math.random() * 12) + 1)
+        // $("alert").on("click", function () {
+            // $("#showTally").empty();
+            userTally = 0;
+            console.log(userTally);
+            console.log($("#showTally"));
+            $("#showTally").text(userTally);
+        // })
     }
-    
+
+    function newTargetNumber() {
+        target = Math.floor((Math.random() * 120) + 9);
+        console.log(target);
+        $("#number-to-guess").text(target);
+    }
+
+    function newCrystalNumber() {
+        amberNumber = Math.floor((Math.random() * 12) + 1);
+        rubyNumber = Math.floor((Math.random() * 12) + 1);
+        sapphireNumber = Math.floor((Math.random() * 12) + 1);
+        emeraldNumber = Math.floor((Math.random() * 12) + 1);
+        newClickNumbers();
+    }
+
     //When the score equals the random number, add one to win
     function winOrLose() {
-        if (userTally == target) { 
-            wins++ //adds one to win
-            alert ("Score! You win!")
-            $("#wins").text(wins)
-            reset()//restart game
-            newNumbers() //generates all new random numbers for crystals and target
+        if (userTally == target) {
+            wins++; //adds one to win
+            alert("Score! You win!");
+            $("#wins").text(wins);
+            reset(); //restart game
+            newTargetNumber();
+            newCrystalNumber(); //generates all new random numbers for crystals and target
         }
 
         //If the score goes over the random number, add one to loss
         else if (userTally > target) {
-            losses++
-            alert ("Bummer! You lose!")
-            $("#losses").text(losses)
-            reset() //restart game
-            newNumbers() //generates all new random numbers for crystals and target
+            losses++;
+            alert("Bummer! You lose!");
+            $("#losses").text(losses);
+            reset(); //restart game
+            newTargetNumber();
+            newCrystalNumber(); //generates all new random numbers for crystals and target
         }
     }
 
@@ -77,96 +85,41 @@ $(document).ready(function () {
     //When the player clicks a crystal the number associated with it will be added to a score
     //Each click will add the number to the userTally
 
-    //Amber
-    $("#amber").on("click", function () {
-        userTally = userTally + amberNumber //adds the amber number to the userTally
-        // userTally.push (amberNumber)
-        console.log(userTally)
-        $("#showTally").text(userTally) //shows it in the Tally area
-        winOrLose() //win or lose function
-        // test to see if the score is equal to target - add one to win and reset
-        // if (userTally == target) { 
-        //     wins++ //adds one to win
-        //     alert ("Score! You win!")
-        //     $("#wins").text(wins)
-        //     reset //restart game
-        // }
+    function newClickNumbers() {
+        //Amber
+        $("#amber").on("click", function () {
+            userTally = userTally + amberNumber //adds the amber number to the userTally
+            // userTally.push (amberNumber)
+            console.log(userTally)
+            $("#showTally").text(userTally) //shows it in the Tally area
+            winOrLose() //win or lose function
+        })
 
-        // //If the score goes over the random number, add one to loss and reset
-        // else if (userTally > target) {
-        //     losses++
-        //     alert ("Bummer! You lose!")
-        //     $("#losses").text(losses)
-        //     reset //restart game
-        // }
-    })
+        //Ruby
+        $("#ruby").on("click", function () {
+            userTally = userTally + rubyNumber //adds the amber number to the userTally
+            console.log(userTally)
+            $("#showTally").text(userTally) //shows it in the Tally area
+            winOrLose() //win or lose function
+        })
 
-    //Ruby
-    $("#ruby").on("click", function () {
-        userTally = userTally + rubyNumber //adds the amber number to the userTally
-        console.log(userTally)
-        $("#showTally").text(userTally) //shows it in the Tally area
-        winOrLose() //win or lose function
-        //test to see if the score is equal to target - add one to win and reset
-        // if (userTally == target) { 
-        //     wins++ //adds one to win
-        //     alert ("Score! You win!")
-        //     $("#wins").text(wins)
-        //     reset //restart game
-        // }
+        //Sapphire
+        $("#sapphire").on("click", function () {
+            userTally = userTally + sapphireNumber //adds the amber number to the userTally
+            console.log(userTally)
+            $("#showTally").text(userTally) //shows it in the Tally area
+            winOrLose() //win or lose function
+        })
 
-        // //If the score goes over the random number, add one to loss and reset
-        // else if (userTally > target) {
-        //     losses++
-        //     alert ("Bummer! You lose!")
-        //     $("#losses").text(losses)
-        //     reload //restart game
-        // }
-    })
+        //Emerald
+        $("#emerald").on("click", function () {
+            userTally = userTally + emeraldNumber //adds the amber number to the userTally
+            console.log(userTally)
+            $("#showTally").text(userTally) //shows it in the Tally area
+            winOrLose() //win or lose function
+        })
+    }
 
-    //Sapphire
-    $("#sapphire").on("click", function () {
-        userTally = userTally + sapphireNumber //adds the amber number to the userTally
-        console.log(userTally)
-        $("#showTally").text(userTally) //shows it in the Tally area
-        winOrLose() //win or lose function
-        //test to see if the score is equal to target - add one to win and reload
-        // if (userTally == target) { 
-        //     wins++ //adds one to win
-        //     alert ("Score! You win!")
-        //     $("#wins").text(wins)
-        //     reload //restart game
-        // }
+    newClickNumbers()
 
-        // //If the score goes over the random number, add one to loss and reload
-        // else if (userTally > target) {
-        //     losses++
-        //     alert ("Bummer! You lose!")
-        //     $("#losses").text(losses)
-        //     reload //restart game
-        // }
-    })
-
-    //Emerald
-    $("#emerald").on("click", function () {
-        userTally = userTally + emeraldNumber //adds the amber number to the userTally
-        console.log(userTally)
-        $("#showTally").text(userTally) //shows it in the Tally area
-        winOrLose() //win or lose function
-        //test to see if the score is equal to target - add one to win and reload
-        // if (userTally == target) { 
-        //     wins++ //adds one to win
-        //     alert ("Score! You win!")
-        //     $("#wins").text(wins)
-        //     reload //restart game
-        // }
-
-        // //If the score goes over the random number, add one to loss and reload
-        // else if (userTally > target) {
-        //     losses++
-        //     alert ("Bummer! You lose!")
-        //     $("#losses").text(losses)
-        //     reload //restart game
-        // }
-    })
-})    
+})

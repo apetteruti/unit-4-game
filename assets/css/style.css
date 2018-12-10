@@ -23,3 +23,7 @@ body{
 #tally {
     background-color: rgb(219, 219, 191);
 }
+
+#showTally{
+    font-size: 27px;
+}
